@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Sala - Sender</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #27272a; /* zinc-900 */
+        }
+        canvas { display: block; }
+        .controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <input type="file" id="fileInput" accept="image/*">
+        <label for="gridSpacing">Espaçamento:</label>
+        <input type="number" id="gridSpacing" value="50" min="10" max="200">
+        <label for="gridOverlay">Sobrepor grid:</label>
+        <input type="checkbox" id="gridOverlay" checked>
+        <br>
+        <label for="gridColor">Cor do Grid:</label>
+        <input type="color" id="gridColor" value="#dddddd">
+        <button id="addPlayerButton">Adicionar Player</button>
+    </div>
+    <canvas id="canvas"></canvas>
+</body>
+</html>
