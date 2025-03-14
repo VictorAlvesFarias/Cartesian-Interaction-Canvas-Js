@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
         x: Math.random() * 400 + 50,
         y: Math.random() * 300 + 50,
         radius: 20,
-        id:socket.id,
+        id: socket.id,
         color: "#" + Math.floor(Math.random() * 16777215).toString(16) // Cor aleatória
     };
 
@@ -60,7 +60,7 @@ io.on('connection', (socket) => {
 
         io.emit('playerDisconnected', players[socket.id]);
 
-        
+
         delete players[socket.id];
     });
 
